@@ -472,7 +472,7 @@
   }
   
   function isReactElement(obj) {
-    return obj.hasOwnProperty('$$typeof') && obj.$$typeof === Symbol.for('react.element');
+    return obj.hasOwnProperty('$$typeof') && typeof Symbol === 'function' && obj.$$typeof === Symbol.for('react.element');
   }
 
   function Immutable(obj, options) {
