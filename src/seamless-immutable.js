@@ -472,7 +472,7 @@
   }
 
   function Immutable(obj, options) {
-    if (isImmutable(obj)) {
+    if (isImmutable(obj) || obj.hasOwnProperty('$$typeof') && obj.$$typeof === Symbol.for('react.element')) {
       return obj;
     } else if (obj instanceof Array) {
       return makeImmutableArray(obj.slice());
